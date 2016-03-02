@@ -6,6 +6,7 @@
 package boutiqueEnLigne.service;
 
 import boutiqueEnLigne.entity.Utilisateur;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,5 +14,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author admin
  */
 public interface UtilisateurService extends CrudRepository<Utilisateur, Long>{
+    
+    public List<Utilisateur> findByEmail(String s);
     
 }

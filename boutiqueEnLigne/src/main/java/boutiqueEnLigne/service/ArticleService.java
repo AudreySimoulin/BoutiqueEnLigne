@@ -6,6 +6,7 @@
 package boutiqueEnLigne.service;
 
 import boutiqueEnLigne.entity.Article;
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
@@ -15,17 +16,17 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ArticleService extends CrudRepository<Article, Long>{
     
-    public List<Article> findByCategorieId(Long id);
-    public List<Article> findByCategorieIdOrderByPrixAsc(Long id);
-    public List<Article> findByCategorieIdOrderByPrixDesc(Long id);
-    public List<Article> findByNomContainingIgnoreCase(String str);
-    public List<Article> findByNomContainingIgnoreCaseOrderByPrixDesc(String str);
-    public List<Article> findByNomContainingIgnoreCaseOrderByPrixAsc(String str);
-    public List<Article> findByCategorieIdAndNomContainingIgnoreCase(Long id, String str);
-    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseOrderByPrixDesc(Long id, String str);
-    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseOrderByPrixAsc(Long id, String str);
+//    public List<Article> findByCategorieId(Long id);
+//    public List<Article> findByCategorieIdOrderByPrixAsc(Long id);
+//    public List<Article> findByCategorieIdOrderByPrixDesc(Long id);
+//    public List<Article> findByNomContainingIgnoreCase(String str);
+//    public List<Article> findByNomContainingIgnoreCaseOrderByPrixDesc(String str);
+//    public List<Article> findByNomContainingIgnoreCaseOrderByPrixAsc(String str);
+//    public List<Article> findByCategorieIdAndNomContainingIgnoreCase(Long id, String str);
+//    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseOrderByPrixDesc(Long id, String str);
+//    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseOrderByPrixAsc(Long id, String str);
   
-     
+     public List<Article> findByCategorieIdAndNomContainingIgnoreCaseAndDateAndPrice(Long id, String str, Date date, Double price);
     
     
 }
