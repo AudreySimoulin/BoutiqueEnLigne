@@ -5,10 +5,24 @@
  */
 package boutiqueEnLigne.service;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author admin
  */
+
+@Service
 public class ConfigService {
+    
+    private String emailSite = "admin@boutiqueenligne.com";
+
+    public String getEmailSite() {
+        return emailSite;
+    }
+
+    public void setEmailSite(String emailSite) {
+        this.emailSite = emailSite;
+    }
     
 }

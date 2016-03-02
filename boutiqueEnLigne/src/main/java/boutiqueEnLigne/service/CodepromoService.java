@@ -14,4 +14,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface CodepromoService extends CrudRepository<Codepromo, Long>{
     
+    public Codepromo findOneByCodePromo(String codepromo);
+    
 }

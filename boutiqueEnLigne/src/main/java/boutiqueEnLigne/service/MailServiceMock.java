@@ -5,6 +5,7 @@
  */
 package boutiqueEnLigne.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,9 +15,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MailServiceMock implements MailService{
+    
+    @Autowired
+    private ConfigService configService;
 
     @Override
-    public void mail(String src, String dest, String titre, String contenu) {
+    public void mail(String dest, String titre, String contenu) {
+        configService.getEmailSite();
         System.out.println(titre + " : " + contenu);
     }
     

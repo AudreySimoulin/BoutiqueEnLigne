@@ -14,8 +14,8 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author admin
  */
-public interface ArticleService extends CrudRepository<Article, Long>{
-    
+public interface ArticleService extends CrudRepository<Article, Long> {
+
 //    public List<Article> findByCategorieId(Long id);
 //    public List<Article> findByCategorieIdOrderByPrixAsc(Long id);
 //    public List<Article> findByCategorieIdOrderByPrixDesc(Long id);
@@ -25,8 +25,6 @@ public interface ArticleService extends CrudRepository<Article, Long>{
 //    public List<Article> findByCategorieIdAndNomContainingIgnoreCase(Long id, String str);
 //    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseOrderByPrixDesc(Long id, String str);
 //    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseOrderByPrixAsc(Long id, String str);
-  
-     public List<Article> findByCategorieIdAndNomContainingIgnoreCaseAndDateAndPrice(Long id, String str, Date date, Double price);
-    
-    
+    public List<Article> findByCategorieIdAndNomContainingIgnoreCaseAndDatePublicationAndPrixBetween(Long id, String str, Date date, Double pricemin, Double pricemax);
+
 }

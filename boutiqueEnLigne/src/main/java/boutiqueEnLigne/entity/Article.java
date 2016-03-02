@@ -53,19 +53,19 @@ public class Article implements Serializable {
     private Genre genre;
 
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date datePublication;
 
     public Article() {
     }
 
-    public Article(Long id, Integer stock, Double prix, String nom, Categorie categorie, Genre genre, Date date) {
+    public Article(Long id, Integer stock, Double prix, String nom, Categorie categorie, Genre genre, Date datePublication) {
         this.id = id;
         this.stock = stock;
         this.prix = prix;
         this.nom = nom;
         this.categorie = categorie;
         this.genre = genre;
-        this.date = date;
+        this.datePublication = datePublication;
     }
 
     public Genre getGenre() {
@@ -77,11 +77,11 @@ public class Article implements Serializable {
     }
 
     public Date getDate() {
-        return date;
+        return datePublication;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(Date datePublication) {
+        this.datePublication = datePublication;
     }
 
     public List<Souscommande> getArticlesCommandes() {

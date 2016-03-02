@@ -32,7 +32,7 @@ public class UtilisateurServiceImpl {
         }
         utilisateurService.save(u); 
         
-        mailService.mail("Admin", "Dest", "Inscription validée", "Vous êtes bien inscrit !");
+        mailService.mail("Dest", "Inscription validée", "Vous êtes bien inscrit !");
 
     }
     
@@ -43,7 +43,7 @@ public class UtilisateurServiceImpl {
             throw new PasswordOuEmailErroneException();
         }
         
-        System.out.println("Félicitations vous êtes connectés");
+        System.out.println("Félicitations vous êtes connecté");
         
     }
 }

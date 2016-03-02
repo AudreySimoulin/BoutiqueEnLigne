@@ -5,17 +5,20 @@
  */
 package boutiqueEnLigne.test;
 
+import boutiqueEnLigne.entity.Categorie;
 import boutiqueEnLigne.service.ArticleService;
 import boutiqueEnLigne.service.CategorieService;
 import boutiqueEnLigne.service.CodepromoService;
 import boutiqueEnLigne.service.CommandeService;
 import boutiqueEnLigne.service.DBService;
+import boutiqueEnLigne.service.GenerationCodeService;
 import boutiqueEnLigne.service.ModelivraisonService;
 import boutiqueEnLigne.service.SouscommandeService;
 import boutiqueEnLigne.service.UtilisateurService;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import boutiqueEnLigne.spring.SpringConfig;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,9 +59,36 @@ public class SpringTest {
     
     @Autowired
     private DBService dBService;
+    
+    @Autowired
+    private GenerationCodeService generationCodeService;
 
+//    @Before
+//    public void initialiser(){
+//        dBService.deleteAll();
+//        
+//        {
+//            Categorie c = new Categorie(1L, "Vêtements");
+//            categorieService.save(c);
+//        }
+//        {
+//            Categorie c = new Categorie(1L, "Vêtements");
+//            categorieService.save(c);
+//        }
+//        {
+//            Categorie c = new Categorie(1L, "Vêtements");
+//            categorieService.save(c);
+//        }
+//        {
+//            Categorie c = new Categorie(1L, "Vêtements");
+//            categorieService.save(c);
+//        }
+//    }
+    
     @Test
     public void doNadaOK() {
+        
+       System.out.println(generationCodeService.generateString(6));
 
     }
 

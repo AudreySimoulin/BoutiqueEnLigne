@@ -6,6 +6,7 @@
 package boutiqueEnLigne.service;
 
 import boutiqueEnLigne.entity.Souscommande;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,5 +14,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author admin
  */
 public interface SouscommandeService extends CrudRepository<Souscommande, Long>{
+    
+    public List<Souscommande> findByCommandeId(Long Id);
     
 }

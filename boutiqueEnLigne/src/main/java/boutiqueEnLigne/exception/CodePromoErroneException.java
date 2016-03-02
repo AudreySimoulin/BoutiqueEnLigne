@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package boutiqueEnLigne.service;
+package boutiqueEnLigne.exception;
 
 /**
  *
  * @author admin
  */
-public interface MailService {
+public class CodePromoErroneException extends Exception {
 
-    public void mail(String dest, String titre, String contenu);
-
+   
 }

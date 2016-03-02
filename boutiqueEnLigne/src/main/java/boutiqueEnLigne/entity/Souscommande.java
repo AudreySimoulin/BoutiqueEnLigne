@@ -38,8 +38,7 @@ public class Souscommande implements Serializable {
     public Souscommande() {
     }
 
-    public Souscommande(Long id, Integer quantite, Article article, Commande commande) {
-        this.id = id;
+    public Souscommande(Integer quantite, Article article, Commande commande) {
         this.quantite = quantite;
         this.article = article;
         this.commande = commande;

@@ -6,6 +6,7 @@
 package boutiqueEnLigne.service;
 
 import boutiqueEnLigne.entity.Commande;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,5 +14,9 @@ import org.springframework.data.repository.CrudRepository;
  * @author admin
  */
 public interface CommandeService extends CrudRepository<Commande, Long>{
+    
+    public List<Commande> findByUtilisateurIdOrderByDateCommandeDesc(Long id);
+    public List<Commande> findByPaye(Boolean paye);
+    public List<Commande> findByLivre(Boolean livre);
     
 }
