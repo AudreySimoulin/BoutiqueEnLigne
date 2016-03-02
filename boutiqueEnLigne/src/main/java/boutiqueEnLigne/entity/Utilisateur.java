@@ -5,11 +5,14 @@
  */
 package boutiqueEnLigne.entity;
 
+import boutiqueEnLigne.enumeration.TypeUtil;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,8 +53,35 @@ public class Utilisateur implements Serializable {
     @Column(length = 16)
     private String tel;
 
+    @Enumerated(EnumType.STRING)
+    private TypeUtil typeUtil;
+
     @OneToMany(mappedBy = "utilisateur")
     private List<Commande> commandes = new ArrayList<>();
+
+    public Utilisateur() {
+    }
+
+    public Utilisateur(Long id, String email, String mdp, String nom, String prenom, String adresse, String codePostal, String ville, String tel, TypeUtil typeUtil) {
+        this.id = id;
+        this.email = email;
+        this.mdp = mdp;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
+        this.tel = tel;
+        this.typeUtil = typeUtil;
+    }
+
+    public TypeUtil getTypeUtil() {
+        return typeUtil;
+    }
+
+    public void setTypeUtil(TypeUtil typeUtil) {
+        this.typeUtil = typeUtil;
+    }
 
     public List<Commande> getCommandes() {
         return commandes;

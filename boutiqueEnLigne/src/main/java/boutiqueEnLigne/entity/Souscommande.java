@@ -35,6 +35,16 @@ public class Souscommande implements Serializable {
     @JoinColumn(name = "Commande_ID")
     private Commande commande;
 
+    public Souscommande() {
+    }
+
+    public Souscommande(Long id, Integer quantite, Article article, Commande commande) {
+        this.id = id;
+        this.quantite = quantite;
+        this.article = article;
+        this.commande = commande;
+    }
+
     public Article getArticle() {
         return article;
     }

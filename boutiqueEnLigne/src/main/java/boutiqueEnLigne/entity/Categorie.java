@@ -33,6 +33,14 @@ public class Categorie implements Serializable {
     @OneToMany(mappedBy = "categorie")
     private List<Article> articles = new ArrayList<>();
 
+    public Categorie() {
+    }
+
+    public Categorie(Long id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
+
     public String getNom() {
         return nom;
     }

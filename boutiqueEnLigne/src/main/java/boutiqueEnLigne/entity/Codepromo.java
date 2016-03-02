@@ -35,6 +35,16 @@ public class Codepromo implements Serializable {
 
     private Double valeur;
 
+    public Codepromo() {
+    }
+
+    public Codepromo(Long id, String code, TypeCodePromo typeCodePromo, Double valeur) {
+        this.id = id;
+        this.code = code;
+        this.typeCodePromo = typeCodePromo;
+        this.valeur = valeur;
+    }
+
     public String getCode() {
         return code;
     }

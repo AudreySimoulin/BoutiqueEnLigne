@@ -31,9 +31,18 @@ public class Modelivraison implements Serializable {
     private String nom;
 
     private Double prixLivraison;
-    
+
     @OneToMany(mappedBy = "modeLivraison")
-    private List<Commande> commandes = new ArrayList<>() ;
+    private List<Commande> commandes = new ArrayList<>();
+
+    public Modelivraison() {
+    }
+
+    public Modelivraison(Long id, String nom, Double prixLivraison) {
+        this.id = id;
+        this.nom = nom;
+        this.prixLivraison = prixLivraison;
+    }
 
     public String getNom() {
         return nom;

@@ -36,7 +36,9 @@ public class Commande implements Serializable {
 
     private Double prixTotal;
 
-    private Boolean paye;
+    private Boolean paye = false;
+
+    private Boolean livre = false;
 
     @OneToMany(mappedBy = "commande")
     private List<Souscommande> sousCommandes = new ArrayList<>();
@@ -48,6 +50,25 @@ public class Commande implements Serializable {
     @ManyToOne
     @JoinColumn(name = "ModeLivraison_ID")
     private Modelivraison modeLivraison;
+
+    public Commande() {
+    }
+
+    public Commande(Long id, Date dateCommande, Double prixTotal, Utilisateur utilisateur, Modelivraison modeLivraison) {
+        this.id = id;
+        this.dateCommande = dateCommande;
+        this.prixTotal = prixTotal;
+        this.utilisateur = utilisateur;
+        this.modeLivraison = modeLivraison;
+    }
+
+    public Boolean getLivre() {
+        return livre;
+    }
+
+    public void setLivre(Boolean livre) {
+        this.livre = livre;
+    }
 
     public List<Souscommande> getSousCommandes() {
         return sousCommandes;

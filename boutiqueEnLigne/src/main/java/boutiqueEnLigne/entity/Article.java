@@ -5,17 +5,23 @@
  */
 package boutiqueEnLigne.entity;
 
+import boutiqueEnLigne.enumeration.Genre;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -32,7 +38,7 @@ public class Article implements Serializable {
     private Integer stock;
 
     private Double prix;
-    
+
     @Column(length = 32)
     private String nom;
 
@@ -42,6 +48,41 @@ public class Article implements Serializable {
 
     @OneToMany(mappedBy = "article")
     private List<Souscommande> articlesCommandes = new ArrayList<Souscommande>();
+
+    @Enumerated(EnumType.STRING)
+    private Genre genre;
+
+    @Temporal(TemporalType.DATE)
+    private Date date;
+
+    public Article() {
+    }
+
+    public Article(Long id, Integer stock, Double prix, String nom, Categorie categorie, Genre genre, Date date) {
+        this.id = id;
+        this.stock = stock;
+        this.prix = prix;
+        this.nom = nom;
+        this.categorie = categorie;
+        this.genre = genre;
+        this.date = date;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public List<Souscommande> getArticlesCommandes() {
         return articlesCommandes;
