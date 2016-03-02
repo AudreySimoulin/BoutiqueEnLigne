@@ -6,6 +6,7 @@
 package boutiqueEnLigne.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Categorie implements Serializable {
     private String nom;
 
     @OneToMany(mappedBy = "categorie")
-    private List<Article> articles;
+    private List<Article> articles = new ArrayList<>();
 
     public String getNom() {
         return nom;

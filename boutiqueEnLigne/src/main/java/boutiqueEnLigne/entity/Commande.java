@@ -6,6 +6,7 @@
 package boutiqueEnLigne.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -38,7 +39,7 @@ public class Commande implements Serializable {
     private Boolean paye;
 
     @OneToMany(mappedBy = "commande")
-    private List<Souscommande> sousCommandes;
+    private List<Souscommande> sousCommandes = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "Util_ID")

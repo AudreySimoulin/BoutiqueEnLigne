@@ -6,6 +6,7 @@
 package boutiqueEnLigne.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,7 +51,7 @@ public class Utilisateur implements Serializable {
     private String tel;
 
     @OneToMany(mappedBy = "utilisateur")
-    private List<Commande> commandes;
+    private List<Commande> commandes = new ArrayList<>();
 
     public List<Commande> getCommandes() {
         return commandes;

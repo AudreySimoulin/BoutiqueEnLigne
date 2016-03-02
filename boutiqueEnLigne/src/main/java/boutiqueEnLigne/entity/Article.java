@@ -6,6 +6,7 @@
 package boutiqueEnLigne.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -40,7 +41,7 @@ public class Article implements Serializable {
     private Categorie categorie;
 
     @OneToMany(mappedBy = "article")
-    private List<Souscommande> articlesCommandes;
+    private List<Souscommande> articlesCommandes = new ArrayList<Souscommande>();
 
     public List<Souscommande> getArticlesCommandes() {
         return articlesCommandes;
