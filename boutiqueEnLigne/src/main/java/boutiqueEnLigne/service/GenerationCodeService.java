@@ -33,7 +33,7 @@ public class GenerationCodeService {
                 pass.append(chars.charAt(i));
             }
 
-            Codepromo cp = codepromoService.findOneByCodePromo(pass.toString());
+            Codepromo cp = codepromoService.findOneByCode(pass.toString());
 
             if (cp != null) {
                 pass = new StringBuilder(charLength);

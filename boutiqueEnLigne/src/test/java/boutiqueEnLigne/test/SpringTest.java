@@ -5,7 +5,10 @@
  */
 package boutiqueEnLigne.test;
 
+import boutiqueEnLigne.entity.Article;
 import boutiqueEnLigne.entity.Categorie;
+import boutiqueEnLigne.entity.Modelivraison;
+import boutiqueEnLigne.enumeration.Genre;
 import boutiqueEnLigne.service.ArticleService;
 import boutiqueEnLigne.service.CategorieService;
 import boutiqueEnLigne.service.CodepromoService;
@@ -18,6 +21,7 @@ import boutiqueEnLigne.service.UtilisateurService;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import boutiqueEnLigne.spring.SpringConfig;
+import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,27 +67,44 @@ public class SpringTest {
     @Autowired
     private GenerationCodeService generationCodeService;
 
-//    @Before
-//    public void initialiser(){
-//        dBService.deleteAll();
-//        
-//        {
-//            Categorie c = new Categorie(1L, "Vêtements");
-//            categorieService.save(c);
-//        }
-//        {
-//            Categorie c = new Categorie(1L, "Vêtements");
-//            categorieService.save(c);
-//        }
-//        {
-//            Categorie c = new Categorie(1L, "Vêtements");
-//            categorieService.save(c);
-//        }
-//        {
-//            Categorie c = new Categorie(1L, "Vêtements");
-//            categorieService.save(c);
-//        }
-//    }
+    @Before
+    public void initialiser(){
+        dBService.deleteAll();
+        
+        {
+            Categorie c = new Categorie(1L, "Vêtements");
+            categorieService.save(c);
+        }
+        {
+            Categorie c = new Categorie(2L, "Chaussures");
+            categorieService.save(c);
+        }
+        {
+            Categorie c = new Categorie(3L, "Sacs");
+            categorieService.save(c);
+        }
+        {
+            Categorie c = new Categorie(4L, "Accessoires");
+            categorieService.save(c);
+        }
+        {
+            Categorie c = new Categorie(5L, "Multémédia");
+            categorieService.save(c);
+        }
+        {
+            Modelivraison mL = new Modelivraison(1L, "Chronopost", 15.3);
+            modelivraisonService.save(mL);
+        }
+        {
+            Modelivraison mL = new Modelivraison(2L, "Colissimo", 10.5);
+            modelivraisonService.save(mL);
+        }
+        {
+            Article a = new Article(1L, 5, 10.0, "Sac à main", categorieService.findOne(3L), Genre.Femme, new Date());
+            articleService.save(a);
+            
+        }
+    }
     
     @Test
     public void doNadaOK() {

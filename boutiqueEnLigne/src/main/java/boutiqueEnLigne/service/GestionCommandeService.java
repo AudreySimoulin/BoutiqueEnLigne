@@ -90,7 +90,7 @@ public class GestionCommandeService {
     }
 
     public Double prixTotalAvecCodePromo(String code, Commande cmd) {
-        Codepromo codePromo = codepromoService.findOneByCodePromo(code);
+        Codepromo codePromo = codepromoService.findOneByCode(code);
         Double reduction = 0.0;
         Double prixTotal = 0.0;
 
